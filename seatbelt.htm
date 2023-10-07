@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>wearing seatbelts</title>
+  <style>
+
+  body {
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+  }
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  h1 {
+      border: 5px solid white;
+      color: white;
+      padding: 10px;
+      margin: 20px;
+      text-align: center;
+      z-index: 1;
+    }
+    /* Styling for the slideshow container */
+    .slideshow-container {
+      padding-top: 140px;
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+      z-index: 1;
+    }
+
+    /* Styling for the slideshow images */
+    .mySlides {
+      display: none;
+    }
+
+    /* Styling for the previous and next buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -30px;
+      padding: 16px;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      user-select: none;
+      z-index: 1;
+    }
+
+    .next {
+      right: 0;
+      z-index: 1;
+    }
+
+    /* Styling for the dots at the bottom */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px; /* Decreased margin for better visibility */
+      background-color: transparent; /* Set the background color to transparent */
+      border: 2px solid white; /* Add a border to the dots */
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      z-index: 1;
+    }
+
+    .active, .dot:hover {
+      background-color: white;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Right way to wear seatbelts</h1>
+<div class="overlay">
+<div class="slideshow-container">
+  <div class="mySlides">
+    <img src="sb1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="sb2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="sb3.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <img src="sb4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="sb5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="sb6.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <img src="sb7.jpg" style="width:100%">
+  </div>
+  <!-- Previous and next buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+</div>
+
+<!-- Dots to indicate current slide -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
